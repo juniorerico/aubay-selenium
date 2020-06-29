@@ -29,8 +29,9 @@
 	  - <https://codeshare.io/5DxpPm>
 	
 	- Practicing Websites
-      - http://automationpractice.com/index.php
-      - http://the-internet.herokuapp.com/
+	  - https://www.seleniumeasy.com/test/
+	  - http://automationpractice.com/index.php
+	  - http://the-internet.herokuapp.com/
 	
 	- Outros
 	  - https://www.guru99.com/selenium-tutorial.html
