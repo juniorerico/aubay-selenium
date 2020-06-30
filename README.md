@@ -51,7 +51,7 @@
 	- https://www.w3schools.com/cssref/css_selectors.asp
 	- https://devhints.io/css
   - XPath Selector - https://devhints.io/xpath
-	- Multi-select dropdown list - http://output.jsbin.com/osebed/
+  - Multi-select dropdown list - http://output.jsbin.com/osebed/
   - Practicing
         - CSS Selector Game - https://flukeout.github.io/
 
