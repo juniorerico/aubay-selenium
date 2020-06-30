@@ -52,6 +52,8 @@
 	- https://devhints.io/css
   - XPath Selector - https://devhints.io/xpath
 	- Multi-select dropdown list - http://output.jsbin.com/osebed/
+  - Practicing
+        - CSS Selector Game - https://flukeout.github.io/
 
 ## 3 - TestNG
 - 3.1 - Criar casos de teste
