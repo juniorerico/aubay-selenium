@@ -20,15 +20,9 @@
                 <h5>DESAFIO 1</h5>
                 <p>Clique no botão <strong style="color: #ffc107">amarelo</strong></p>
                 <div class="buttons">
-                    <button type="button" class="btn btn-primary" onclick="clickYellow(false)">
-                        Button
-                    </button>
-                    <button type="button" class="btn btn-warning" onclick="clickYellow(true)">
-                        Button
-                    </button>
-                    <button type="button" class="btn btn-success" onclick="clickYellow(false)">
-                        Button
-                    </button>
+                    <button type="button" class="btn btn-primary" onclick="challenge1(false)">Button</button>
+                    <button type="button" class="btn btn-warning" onclick="challenge1(true)">Button</button>
+                    <button type="button" class="btn btn-success" onclick="challenge1(false)">Button</button>
                 </div>
                 <p>
                     <strong>Resultado:</strong>
@@ -42,15 +36,9 @@
                 <h5>DESAFIO 2</h5>
                 <p>Clique no botão <strong style="color: #28a745">verde</strong></p>
                 <div class="buttons">
-                    <button type="button" class="btn btn-primary" onclick="clickGreen(false)">
-                        Button
-                    </button>
-                    <button type="button" class="btn btn-warning" onclick="clickGreen(false)">
-                        Button
-                    </button>
-                    <button type="button" class="btn btn-success" onclick="clickGreen(true)">
-                        Button
-                    </button>
+                    <button type="button" class="btn btn-primary" onclick="challenge(false)">Button</button>
+                    <button type="button" class="btn btn-warning" onclick="challenge(false)">Button</button>
+                    <button type="button" class="btn btn-success" onclick="challenge(true)">Button</button>
                 </div>
                 <p>
                     <strong>Resultado:</strong>
@@ -62,6 +50,24 @@
         <div class="row justify-content-center">
             <div id="group-3" class="col-12 d-flex flex-column align-items-center">
                 <h5>DESAFIO 3</h5>
+                <p>Clique no <strong>Botão 4</strong></p>
+                <div class="buttons">
+                    <button type="button" class="btn btn-primary" onclick="challenge3(false)">Botão 1</button>
+                    <button type="button" class="btn btn-success" onclick="challenge3(false)">Botão 2</button>
+                    <button type="button" class="btn btn-primary" onclick="challenge3(false)">Botão 3</button>
+                    <button type="button" class="btn btn-warning" onclick="challenge3(true)">Botão 4</button>
+                    <button type="button" class="btn btn-primary" onclick="challenge3(false)">Botão 5</button>
+                </div>
+                <p>
+                    <strong>Resultado:</strong>
+                    <span id="result-3">Clique em algum botão...</span>
+                </p>
+            </div>
+        </div>
+        <br />
+        <div class="row justify-content-center">
+            <div id="group-4" class="col-12 d-flex flex-column align-items-center">
+                <h5>DESAFIO 4</h5>
                 <p>Compre o <strong>Produto 1</strong></p>
                 <div class="cards d-flex flex-row align-items-center">
                     <div class="card">
@@ -70,9 +76,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">16,90 €</h5>
                             <p class="card-text">Produto 1</p>
-                            <button class="btn btn-primary" onclick="challenge3(true)">
-                                Buy Now
-                            </button>
+                            <button class="btn btn-primary" onclick="challenge4(true)">Comprar</button>
                         </div>
                     </div>
                     <div class="card">
@@ -81,9 +85,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">36,90 €</h5>
                             <p class="card-text">Produto 2</p>
-                            <button class="btn btn-primary" onclick="challenge3(false)">
-                                Buy Now
-                            </button>
+                            <button class="btn btn-primary" onclick="challenge4(false)">Comprar</button>
                         </div>
                     </div>
                     <div class="card">
@@ -92,15 +94,13 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">20,90€ </h5>
                             <p class="card-text">Produto 3</p>
-                            <button class="btn btn-primary" onclick="challenge3(false)">
-                                Buy Now
-                            </button>
+                            <button class="btn btn-primary" onclick="challenge4(false)">Comprar</button>
                         </div>
                     </div>
                 </div>
                 <p>
                     <strong>Resultado:</strong>
-                    <span id="result-3">Compre algum produto...</span>
+                    <span id="result-4">Compre algum produto...</span>
                 </p>
             </div>
         </div>
@@ -109,7 +109,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        function clickYellow(e) {
+        function challenge1(e) {
             if (e == false) {
                 $("#result-1").css('color', 'red');
                 $("#result-1").text("Tente novamente!");
@@ -119,7 +119,7 @@
             }
         }
 
-        function clickGreen(e) {
+        function challenge(e) {
             if (e == false) {
                 $("#result-2").css('color', 'red');
                 $("#result-2").text("Tente novamente!");
@@ -136,6 +136,16 @@
             } else {
                 $("#result-3").css('color', 'green');
                 $("#result-3").text("Muito bem!");
+            }
+        }
+
+        function challenge4(e) {
+            if (e == false) {
+                $("#result-4").css('color', 'red');
+                $("#result-4").text("Tente novamente!");
+            } else {
+                $("#result-4").css('color', 'green');
+                $("#result-4").text("Muito bem!");
             }
         }
     </script>
