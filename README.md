@@ -65,6 +65,8 @@
 - Links
   - Eclipse Plugin
     - https://marketplace.eclipse.org/content/testng-eclipse
+  - Eclipse Plugin (via Install new Software)
+    - http://dl.bintray.com/testng-team/testng-eclipse-release/
   - TestNG Docs 
 	- https://testng.org/doc/documentation-main.html
 	
