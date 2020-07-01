@@ -48,18 +48,23 @@
 	
 - Links
   - CSS Selector 
-	- https://www.w3schools.com/cssref/css_selectors.asp
-	- https://devhints.io/css
+    - https://www.w3schools.com/cssref/css_selectors.asp
+    - https://devhints.io/css
   - XPath Selector - https://devhints.io/xpath
   - Multi-select dropdown list - http://output.jsbin.com/osebed/
   - Practicing
-        - CSS Selector Game - https://flukeout.github.io/
+    - CSS Selector Game - https://flukeout.github.io/
+    - Challenges - https://juniorerico.github.io/aubay-selenium/selectors-practice.html
 
 ## 3 - TestNG
 - 3.1 - Criar casos de teste
   - 3.1.1 - Anotações @BeforeTest, @Test, @AfterTest
+  - 3.1.2 - Assert
+    - 3.1.2.1 - assertEquals, assertTrue, assertFalse
 
 - Links
+  - Eclipse Plugin
+    - https://marketplace.eclipse.org/content/testng-eclipse
   - TestNG Docs 
 	- https://testng.org/doc/documentation-main.html
 	
@@ -71,7 +76,7 @@
   - Page Objects 
 	- https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/
 	
-- 4 - Interações avançadas
+## 4 - Interações avançadas
   - 4.1 - Hover elements
   - 4.2 - Handling Alerts
   - 4.3 - File Upload
@@ -87,7 +92,7 @@
   - Take ScreenShots 
 	- https://stackoverflow.com/questions/3422262/how-to-take-screenshot-with-selenium-webdriver
 
-- 5 - Wait
+## 5 - Wait
   - 5.1 - Implicit Wait
   - 5.2 - Explicit Wait
   - 5.3 - Fluent Wait
@@ -96,7 +101,7 @@
   - Wait Strategies 
 	- https://www.browserstack.com/guide/wait-commands-in-selenium-webdriver
 	
-- 6 - Exceptions
+## 6 - Exceptions
   - 6.1 - Handling Exceptions
 	
 - Links
