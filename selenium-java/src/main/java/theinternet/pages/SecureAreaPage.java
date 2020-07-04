@@ -19,11 +19,10 @@ public class SecureAreaPage {
 	
 	public SecureAreaPage(WebDriver driver) {
 		this.driver = driver;
-		
-		// Verifica se o browser está na página correta
-		// OBS: Identifiquei que essa verificação pode causar problemas em alguns casos
-		// irei explicar na próxima aula.
-		Assert.assertEquals(driver.findElement(title).getText(), "Secure Area");
+	}
+	
+	public String getTitle() {
+		return driver.findElement(title).getText();
 	}
 	
 	// Realiza a ação de logout

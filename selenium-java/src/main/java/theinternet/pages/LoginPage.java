@@ -16,6 +16,7 @@ public class LoginPage {
 	private By inputUsername = By.id("username");
 	private By inputPassword = By.id("password");
 	private By buttonLogin = By.cssSelector(".radius");
+	private By alertMessage = By.id("flash");
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -29,5 +30,9 @@ public class LoginPage {
 		driver.findElement(buttonLogin).click();
 		
 		return new SecureAreaPage(driver);
+	}
+	
+	public String getAlertMessage() {
+		return driver.findElement(alertMessage).getText();
 	}
 }
