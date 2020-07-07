@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>IFrame Practice</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="group-5" class="col-12 d-flex flex-column align-items-center">
+                <h5>DESAFIO 5</h5>
+                <p>Clique no botão <strong style="color: #dc3545">vermelho</strong></p>
+                <div class="buttons">
+                    <button type="button" class="btn btn-primary" onclick="challenge5(false)">Button</button>
+                    <button type="button" class="btn btn-warning" onclick="challenge5(false)">Button</button>
+                    <button type="button" class="btn btn-success" onclick="challenge5(false)">Button</button>
+                    <button type="button" class="btn btn-info" onclick="challenge5(false)">Button</button>
+                    <button type="button" class="btn btn-dark" onclick="challenge5(false)">Button</button>
+                    <button type="button" class="btn btn-danger" onclick="challenge5(true)">Button</button>
+                </div>
+                <p>
+                    <strong>Resultado:</strong>
+                    <span id="result-5">Clique em algum botão...</span>
+                </p>
+            </div>
+        </div>
+        <br />
+        <div class="embed-responsive embed-responsive-1by1">
+            <iframe class="embed-responsive-item"
+                src="https://juniorerico.github.io/aubay-selenium/selectors-practice.html"></iframe>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+    <script>
+        function challenge5(e) {
+            if (e == false) {
+                $("#result-5").css('color', 'red');
+                $("#result-5").text("Tente novamente!");
+            } else {
+                $("#result-5").css('color', 'green');
+                $("#result-5").text("Muito bem!");
+            }
+        }
+    </script>
+</body>
+
+</html>
