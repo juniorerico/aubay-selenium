@@ -2,19 +2,17 @@ package testcases.theinternet;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commons.Utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import theinternet.pages.DropdownPage;
 import theinternet.pages.HomePage;
-import theinternet.pages.LoginPage;
-import theinternet.pages.SecureAreaPage;
 
-public class LoginSuccess {
+public class HandleDropdown {
 	private WebDriver driver;
+	private DropdownPage dropdownPage;
 	
 	@BeforeTest
 	public void setUp() {
@@ -22,20 +20,18 @@ public class LoginSuccess {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://the-internet.herokuapp.com/");
-	}
-	
-	@Test
-	public void loginSuccess() {
-		HomePage homePage = new HomePage(driver);		
-		LoginPage loginPage = homePage.clickFormAuthentication();
-		SecureAreaPage secureAreaPage = loginPage.login("tomsmith", "SuperSecretPassword!");
 		
-		Assert.assertEquals(secureAreaPage.getTitle(), "Secure Area");
+		HomePage homePage = new HomePage(driver);
+		dropdownPage = homePage.clickDropdown();
+	}
+
+	@Test
+	public void handleSimpleAlert() {
+		dropdownPage.selectOption("Option 2");
 	}
 	
 	@AfterTest
 	public void tearDown() {
-		Utils.takeScreenshot(driver, "Teste");
 		//driver.quit();
 	}
 }

@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 
 import commons.Utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import theinternet.pages.DynamicLoadingPage;
+import theinternet.pages.DynamicLoadingPageExampleOne;
 import theinternet.pages.HomePage;
-import theinternet.pages.LoginPage;
-import theinternet.pages.SecureAreaPage;
 
-public class LoginSuccess {
+public class HandlingWaits {
 	private WebDriver driver;
-	
+
 	@BeforeTest
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
@@ -23,19 +23,20 @@ public class LoginSuccess {
 		driver.manage().window().maximize();
 		driver.get("http://the-internet.herokuapp.com/");
 	}
-	
+
 	@Test
-	public void loginSuccess() {
-		HomePage homePage = new HomePage(driver);		
-		LoginPage loginPage = homePage.clickFormAuthentication();
-		SecureAreaPage secureAreaPage = loginPage.login("tomsmith", "SuperSecretPassword!");
+	public void waitForElement() {
+		HomePage homePage = new HomePage(driver);
+		DynamicLoadingPage dynamicLoadingPage = homePage.clickDynamicLoading();
+		DynamicLoadingPageExampleOne dynamicLoadingPageExampleOne = dynamicLoadingPage.clickExampleOne();
 		
-		Assert.assertEquals(secureAreaPage.getTitle(), "Secure Area");
+		dynamicLoadingPageExampleOne.clickStartButton();
+		
+		Assert.assertEquals(dynamicLoadingPageExampleOne.getResult(), "Hello World!");
 	}
-	
+
 	@AfterTest
 	public void tearDown() {
 		Utils.takeScreenshot(driver, "Teste");
-		//driver.quit();
 	}
 }

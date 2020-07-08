@@ -7,14 +7,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commons.Utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import theinternet.pages.AlertsPage;
 import theinternet.pages.HomePage;
-import theinternet.pages.LoginPage;
-import theinternet.pages.SecureAreaPage;
 
-public class LoginSuccess {
+public class HandleAlert {
 	private WebDriver driver;
+	private AlertsPage alertsPage;
 	
 	@BeforeTest
 	public void setUp() {
@@ -22,20 +21,22 @@ public class LoginSuccess {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://the-internet.herokuapp.com/");
-	}
-	
-	@Test
-	public void loginSuccess() {
-		HomePage homePage = new HomePage(driver);		
-		LoginPage loginPage = homePage.clickFormAuthentication();
-		SecureAreaPage secureAreaPage = loginPage.login("tomsmith", "SuperSecretPassword!");
 		
-		Assert.assertEquals(secureAreaPage.getTitle(), "Secure Area");
+		HomePage homePage = new HomePage(driver);
+		alertsPage = homePage.clickJavascriptAlerts();
+	}
+
+	@Test
+	public void handleSimpleAlert() {
+		alertsPage.clickButtonJsAlert();
+		
+		driver.switchTo().alert().accept();
+		
+		Assert.assertEquals(alertsPage.getResult(), "You successfuly clicked an alert");
 	}
 	
 	@AfterTest
 	public void tearDown() {
-		Utils.takeScreenshot(driver, "Teste");
 		//driver.quit();
 	}
 }
