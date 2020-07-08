@@ -48,11 +48,14 @@
 
 <body>
     <div class="container">
-        <h3 class="text-center">SCROLL DOWN</h3>
-        <div class="arrow bounce"></div>
-        <div style="height: 1000px"></div>
-        <div class="row justify-content-center">
-            <div id="group-6" class="col-12 d-flex flex-column align-items-center">
+        
+        <div class="bounce" style="margin-top: 100px;">
+            <h3 class="text-center">SCROLL DOWN</h3>
+            <div class="arrow" style="margin-top: -30px;"></div>
+        </div>
+        <div style="height: 300px"></div>
+        <div class="row justify-content-center" >
+            <div id="group-6" class="col-12 d-flex flex-column align-items-center" style="visibility: hidden;">
                 <h5>DESAFIO 6</h5>
                 <button type="button" class="btn btn-success" onclick="challenge6()">Click me!</button>
                 <p>
@@ -61,6 +64,7 @@
                 </p>
             </div>
         </div>
+        <div style="height: 1000px"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -70,7 +74,7 @@
         $(document).ready(function () {
             $(document).scroll(function () {
                 var y = $(this).scrollTop();
-                if (y > 520) {
+                if (y > 200) {
                     $('#group-6').css("visibility", "unset");
                 } else {
                     $('#group-6').css("visibility", "hidden");
