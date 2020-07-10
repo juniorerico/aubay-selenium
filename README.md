@@ -29,6 +29,7 @@
 	  - <https://codeshare.io/5DxpPm>
 	
 	- Practicing Websites
+	  - [Pratique Selenium](https://juniorerico.github.io/aubay-selenium/)
 	  - https://www.seleniumeasy.com/test/
 	  - http://automationpractice.com/index.php
 	  - http://the-internet.herokuapp.com/
