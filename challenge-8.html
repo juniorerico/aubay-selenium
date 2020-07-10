@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>More Challenges</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="group-8" class="col-12 d-flex flex-column align-items-center">
+                <h5>DESAFIO 8</h5>
+                <p>Esse desafio demora entre 2 e 10 segundos para carregar...</p>
+                <div class="spinner-border" role="status"></div>
+                <button type="button" class="btn btn-primary d-none" onclick="challenge8()">Button</button>
+                <br />
+                <p>
+                    <strong>Resultado:</strong>
+                    <span id="result-8">Clique no botão...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function challenge8() {
+            $("#result-8").css('color', 'green');
+            $("#result-8").text("Muito bem!");
+        }
+        
+        var randomWait = Math.floor(Math.random() * 10) + 2;
+        console.log("RandomWait = " + randomWait);
+        setTimeout(function () {
+            $("#group-8 .spinner-border").hide();
+            $("#group-8 button").removeClass("d-none");
+        }, randomWait * 1000);
+
+
+
+    </script>
+</body>
+
+</html>
