@@ -10,8 +10,38 @@
 
 <body>
     <div class="container">
-    </div>
+        <div class="row justify-content-center">
+            <div id="group-10" class="col-12 d-flex flex-column align-items-center">
+                <h5>DESAFIO 10</h5>
+                <p>Aparecerá um modal nesta página em 2 segundos. Tente fechá-lo!</p>
+                <p>
+                    <strong>Resultado:</strong>
+                    <span id="result-10">Feche o modal...</span>
+                </p>
+            </div>
+        </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="modal-challenge-10" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Desafio 10</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Olá, eu sou um modal chato que aparece após 2 segundos! haha
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
@@ -23,6 +53,18 @@
         crossorigin="anonymous"></script>
 
     <script>
+        function challenge10() {
+            $("#result-10").css('color', 'green');
+            $("#result-10").text("Muito bem!");
+        }
+
+        $('#modal-challenge-10').on('hidden.bs.modal', function (e) {
+            challenge10();
+        })
+
+        setTimeout(function () {
+            $('#modal-challenge-10').modal('show');
+        }, 2000);
     </script>
 </body>
 
