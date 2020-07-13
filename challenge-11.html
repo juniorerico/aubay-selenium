@@ -20,38 +20,20 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div id="group-10" class="col-12 d-flex flex-column align-items-center">
+            <div id="group-11" class="col-12 d-flex flex-column align-items-center">
                 <h5>DESAFIO 11</h5>
-                <p>Neste desafio poderão aparecer entre 1 a 3 modais.. Tente fechar todos!</p>
+                <p>Neste desafio poderá aparecer um modal dentro de 1 segundo.</p>
+                <p>Feche o modal e clique no botão. Se o modal não aparecer, o botão será ativado.</p>
+                <button type="button" class="btn btn-success" onclick="challenge11()" aria-disabled="true" disabled>Button</button>
                 <p>
                     <strong>Resultado:</strong>
-                    <span id="result-11">Feche todos os modais...</span>
+                    <span id="result-11">Feche o modal...</span>
                 </p>
             </div>
         </div>
     </div>
 
     <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Desafio 11</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body justify-content-center">
-                    Você tem uma notificação importante!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -73,26 +55,6 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Desafio 11</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Atualize seus dados agora mesmo e evite fraudes!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -103,7 +65,7 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var modalCount = Math.floor(Math.random() * 3) + 1;
+
 
         function challenge11() {
             $("#result-11").css('color', 'green');
@@ -111,17 +73,20 @@
         }
 
         $('.modal').on('hidden.bs.modal', function (e) {
-            if ($(".modal.show").length == 0){
-                challenge11();
-            }
+            $('#group-11 button').prop('disabled', false);
         })
 
         $(document).ready(function () {
-            for (let index = 1; index <= modalCount; index++) {
-                setTimeout(function () {
-                    $('#modal-' + index).modal('show');
-                }, 500);
-            }
+            var modalCount = Math.floor(Math.random() * 2);
+
+            setTimeout(function () {
+                if (modalCount == 1) {
+                    $('#modal-1').modal('show');
+                } else {
+                    $('#group-11 button').prop('disabled', false);
+                }
+            }, 1000);
+
         });
     </script>
 </body>
