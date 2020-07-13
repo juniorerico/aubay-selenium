@@ -1,9 +1,15 @@
 package theinternet.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import commons.SeleniumUtils;
 
 public class DynamicLoadingPageExampleOne {
 	private WebDriver driver;
@@ -23,8 +29,8 @@ public class DynamicLoadingPageExampleOne {
 		// Explicity Wait
 		// A melhor maneira de utilizar Waits no Selenium
 		// Aguarda até que alguma condição aconteça. Nesse caso, aguarda que o elemento esteja visível
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(result));
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(result));
 		
 		// Hard Wait
 		// A pior maneira de utilizar Waits no Selenium
@@ -36,6 +42,15 @@ public class DynamicLoadingPageExampleOne {
 //			e.printStackTrace();
 //		}
 		
-		return driver.findElement(result).getText();
+		// Fluent Wait
+		// Uma maneira mais configurável de utilizar Waits no Selenium
+//		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+//				.withTimeout(Duration.ofSeconds(10))
+//				.pollingEvery(Duration.ofSeconds(1))
+//				.ignoring(Exception.class);
+//		
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(result));
+		
+		return SeleniumUtils.waitForElementToBeVisible(driver, result, 5).getText();
 	}
 }

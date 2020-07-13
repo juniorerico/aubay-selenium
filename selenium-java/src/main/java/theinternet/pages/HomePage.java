@@ -21,6 +21,7 @@ public class HomePage {
 	private By linkHovers = By.linkText("Hovers");
 	private By linkInfitineScroll = By.linkText("Infinite Scroll");
 	private By linkDynamicLoading = By.linkText("Dynamic Loading");
+	private By linkDynamicControls = By.linkText("Dynamic Controls");
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -56,5 +57,10 @@ public class HomePage {
 	public DynamicLoadingPage clickDynamicLoading() {
 		driver.findElement(linkDynamicLoading).click();
 		return new DynamicLoadingPage(driver);
+	}
+	
+	public DynamicControlsPage clickDynamicControls() {
+		driver.findElement(linkDynamicControls).click();
+		return new DynamicControlsPage(driver);
 	}
 }

@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commons.Utils;
+import commons.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import theinternet.pages.HomePage;
 import theinternet.pages.LoginPage;
@@ -35,7 +35,7 @@ public class LoginSuccess {
 	
 	@AfterTest
 	public void tearDown() {
-		Utils.takeScreenshot(driver, "Teste");
+		SeleniumUtils.takeScreenshot(driver, "Teste");
 		//driver.quit();
 	}
 }

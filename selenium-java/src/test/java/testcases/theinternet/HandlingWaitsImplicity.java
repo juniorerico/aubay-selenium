@@ -1,5 +1,7 @@
 package testcases.theinternet;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -11,9 +13,10 @@ import commons.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import theinternet.pages.DynamicLoadingPage;
 import theinternet.pages.DynamicLoadingPageExampleOne;
+import theinternet.pages.DynamicLoadingPageExampleTwo;
 import theinternet.pages.HomePage;
 
-public class HandlingWaits {
+public class HandlingWaitsImplicity {
 	private WebDriver driver;
 
 	@BeforeTest
@@ -22,17 +25,20 @@ public class HandlingWaits {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://the-internet.herokuapp.com/");
+		
+		// Implicity Wait
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 
 	@Test
 	public void waitForElement() {
 		HomePage homePage = new HomePage(driver);
 		DynamicLoadingPage dynamicLoadingPage = homePage.clickDynamicLoading();
-		DynamicLoadingPageExampleOne dynamicLoadingPageExampleOne = dynamicLoadingPage.clickExampleOne();
+		DynamicLoadingPageExampleTwo dynamicLoadingPageExampleTwo = dynamicLoadingPage.clickExampleTwo();
 		
-		dynamicLoadingPageExampleOne.clickStartButton();
+		dynamicLoadingPageExampleTwo.clickStartButton();
 		
-		Assert.assertEquals(dynamicLoadingPageExampleOne.getResult(), "Hello World!");
+		Assert.assertEquals(dynamicLoadingPageExampleTwo.getResult(), "Hello World!");
 	}
 
 	@AfterTest

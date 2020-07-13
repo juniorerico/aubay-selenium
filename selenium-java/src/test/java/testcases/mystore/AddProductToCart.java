@@ -1,4 +1,4 @@
-package testcases.seleniumchallenges;
+package testcases.mystore;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,29 +6,29 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commons.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import seleniumchallenges.pages.ScrollPage;
+import mystore.pages.HomePage;
 
-public class HandlingScroll {
+public class AddProductToCart {
 	private WebDriver driver;
-	
+
 	@BeforeTest
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://juniorerico.github.io/aubay-selenium/practice-scroll.html");
+		driver.get("http://automationpractice.com/index.php");
 	}
 	
 	@Test
-	public void challengeSix() {
-		ScrollPage scrollPage = new ScrollPage(driver);
-		scrollPage.clickButton();
+	public void addProductToCart() {
+		HomePage homePage = new HomePage(driver);
+		homePage.buy("Printed Dress");
 	}
 	
 	@AfterTest
 	public void tearDown() {
-		SeleniumUtils.takeScreenshot(driver, "Handling Scroll");
+		//driver.quit();
 	}
+	
 }

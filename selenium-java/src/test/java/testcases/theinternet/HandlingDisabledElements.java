@@ -1,4 +1,4 @@
-package testcases.seleniumchallenges;
+package testcases.theinternet;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,11 +6,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commons.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import seleniumchallenges.pages.ScrollPage;
+import theinternet.pages.DynamicControlsPage;
+import theinternet.pages.HomePage;
 
-public class HandlingScroll {
+public class HandlingDisabledElements {
 	private WebDriver driver;
 	
 	@BeforeTest
@@ -18,17 +18,20 @@ public class HandlingScroll {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://juniorerico.github.io/aubay-selenium/practice-scroll.html");
+		driver.get("http://the-internet.herokuapp.com/");
 	}
 	
 	@Test
-	public void challengeSix() {
-		ScrollPage scrollPage = new ScrollPage(driver);
-		scrollPage.clickButton();
+	public void handleDisabled() {
+		HomePage homePage = new HomePage(driver);
+		DynamicControlsPage dynamicControlsPage = homePage.clickDynamicControls();
+		
+		dynamicControlsPage.clickEnable();
+		dynamicControlsPage.typeInput("It Works!");
 	}
 	
 	@AfterTest
 	public void tearDown() {
-		SeleniumUtils.takeScreenshot(driver, "Handling Scroll");
+		
 	}
 }

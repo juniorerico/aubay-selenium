@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import commons.Utils;
+import commons.SeleniumUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import seleniumchallenges.pages.IFramePage;
 
@@ -34,6 +34,6 @@ public class HandlingIFrames {
 	
 	@AfterTest
 	public void tearDown() {
-		Utils.takeScreenshot(driver, "Handling Iframes");
+		SeleniumUtils.takeScreenshot(driver, "Handling Iframes");
 	}
 }
