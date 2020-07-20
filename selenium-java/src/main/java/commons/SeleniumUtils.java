@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumUtils {
@@ -129,5 +130,30 @@ public class SeleniumUtils {
 	public static void scrollToElement(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView()", element);
+	}
+	
+	/**
+	 * Seleciona uma opção no dropdown pelo value
+	 * 
+	 * @param element
+	 * @param value
+	 */
+	public static void selectDropDown(WebElement element, String value) {
+		Select select = new Select(element);
+		select.selectByVisibleText(value);
+	}
+	
+	/**
+	 * Digita em um input. Caso o 'value' esteja vazio, limpa o input
+	 * 
+	 * @param element
+	 * @param value
+	 */
+	public static void sendKeys(WebElement element, String value) {
+		if (value.isEmpty()) {
+			element.clear();
+		} else {
+			element.sendKeys(value);
+		}
 	}
 }

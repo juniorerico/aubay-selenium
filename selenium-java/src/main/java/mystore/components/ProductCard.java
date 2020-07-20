@@ -13,6 +13,7 @@ public class ProductCard {
 	private WebElement product;
 	
 	private By name = By.cssSelector(".product-name");
+	private By price = By.cssSelector(".product-price");
 	private By buttonAddToCart = By.cssSelector(".ajax_add_to_cart_button");
 	
 	public ProductCard(WebElement product) {
@@ -34,5 +35,11 @@ public class ProductCard {
 	 */
 	public void buy() {
 		product.findElement(buttonAddToCart).click();
+	}
+	
+	public double getPrice() {
+		String productPrice = product.findElement(price).getText().replace("$", "");
+		
+		return Double.parseDouble(productPrice);
 	}
 }
