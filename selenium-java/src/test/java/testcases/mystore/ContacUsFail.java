@@ -8,8 +8,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.github.javafaker.Faker;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import mystore.pages.ContactUsPage;
 import mystore.pages.HomePage;
@@ -30,10 +28,8 @@ public class ContacUsFail {
 	}
 	
 	@Test(priority = 1)
-	public void noSubjectError() {
-		Faker faker = new Faker();
-		
-		contactUsPage.typeEmail(faker.internet().emailAddress());
+	public void noSubjectError() {		
+		contactUsPage.typeEmail("email@email.com");
 		contactUsPage.typeOrderId("123456789");
 		contactUsPage.typeMessage("this is a test!");
 		contactUsPage.uploadFile("C:\\Users\\Erico\\git\\aubay-selenium\\selenium-java\\src\\test\\resources\\chromedriver.exe");
