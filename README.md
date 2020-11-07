@@ -79,7 +79,7 @@
   - Page Objects 
 	- https://www.selenium.dev/documentation/en/guidelines_and_recommendations/page_object_models/
 	
-## 4 - Interações avançadas
+## 4 - Interações especiais
   - 4.1 - Hover elements
   - 4.2 - Handling Alerts
   - 4.3 - File Upload
